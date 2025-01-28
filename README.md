@@ -12,11 +12,11 @@ Apparently this is because  the clustering algorithm cannot confidently assign s
 
 The eps (distance threshold) might be too low, causing many segments to be classified as noise.  The min_samples (minimum segments per cluster) might be too high, preventing valid clusters from forming.
 
-    Poor Embedding Quality:
-        The speaker embeddings might not be discriminative enough, making it hard for the clustering algorithm to separate speakers.
+Poor Embedding Quality:
+ The speaker embeddings might not be discriminative enough, making it hard for the clustering algorithm to separate speakers.
 
-    Overlapping Speech or Background Noise:
-        If the audio contains overlapping speech or significant background noise, the embeddings might not be reliable. </gen'd>
+Overlapping Speech or Background Noise:
+  If the audio contains overlapping speech or significant background noise, the embeddings might not be reliable. </gen'd>
 
 - DBSCAN parameters on line 126 might need tweaking. 
 
