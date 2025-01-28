@@ -2,6 +2,28 @@
 diarized transcripts and speaker identification using whisper + pyannote.audio 
 ## work in progress. don't use this. 
 
+
+notes:
+Most speech is labeled as Unassigned instead of Unknown. Needs to be "Unknown_[1,2,3, etc.] to be able to register speaker in speaker_registry.json. 
+
+Apparently this is because  the clustering algorithm cannot confidently assign segments to a speaker cluster, often due to:
+
+   <gen'd> Strict Clustering Parameters:
+
+The eps (distance threshold) might be too low, causing many segments to be classified as noise.  The min_samples (minimum segments per cluster) might be too high, preventing valid clusters from forming.
+
+    Poor Embedding Quality:
+        The speaker embeddings might not be discriminative enough, making it hard for the clustering algorithm to separate speakers.
+
+    Overlapping Speech or Background Noise:
+        If the audio contains overlapping speech or significant background noise, the embeddings might not be reliable. </gen'd>
+
+- DBSCAN parameters on line 126 might need tweaking. 
+
+- Another option might be to first start with cleaner samples of each speaker, run them independently to get them into the registry database, and then see if new transcriptions correctly ID the speaker. 
+
+Performance seems okay. As-is, a one hour 16 minute wav file processed in about 2 hours on a NVIDIA P40, used ~2 GB VRAM. 
+
 ai gen'd readme. don't read it!
 
 Speaker Diarization and Transcription System
