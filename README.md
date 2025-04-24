@@ -1,6 +1,10 @@
 # deardiary
 diarized transcripts and speaker identification using whisper + pyannote.audio 
-## work in progress. don't use this. 
+
+## new version go here https://github.com/JonGerhardson/transcriber2/blob/main/README.md
+
+
+
 
 
 notes:
